@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
+import { Link } from 'react-router-dom';
 
 function CreatePost(props) {
+    // let postFormStyles = {
+    //     color: 'blue',
+    // }
     let _title = null;
     let _content = null;
 
@@ -25,15 +29,18 @@ function CreatePost(props) {
                 <input
                     id='title'
                     type='text'
+                    size={50}
                     placeholder='Title of Post'
                     ref={(input) => { _title = input; }} />
                 <br />
                 <textarea
                     id='content'
                     placeholder='Link to Content'
+                    rows='30'
+                    cols='50'
                     ref={(textarea) => { _content = textarea; }} />
                 <br />
-                <button type='submit'>Post</button>
+                <Link to='/'><button type='submit'>Post</button></Link>
             </form>
         </div>
     )

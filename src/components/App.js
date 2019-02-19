@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import './App.css';
+import { Switch, Route, HashRouter } from 'react-router-dom';
 import Post from '../components/Post';
 import CreatePost from './CreatePost';
 import FrontPage from './FrontPage';
@@ -26,8 +27,12 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           {/* <Post /> */}
-          <FrontPage allThePosts={this.state.masterPostList} />
-          <CreatePost onPostCreation={this.handlePostCreation} />
+          <HashRouter>
+            <Switch>
+              <Route exact path='/' render={() => <FrontPage allThePosts={this.state.masterPostList} />} />
+              <Route path='/newpost' render={() => <CreatePost onPostCreation={this.handlePostCreation} />} />
+            </Switch>
+          </HashRouter>
         </header>
       </div>
     );
