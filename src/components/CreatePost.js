@@ -40,7 +40,8 @@ function CreatePost(props) {
                     cols='50'
                     ref={(textarea) => { _content = textarea; }} />
                 <br />
-                <Link to='/'><button type='submit'>Post</button></Link>
+                <button type='submit'>Post</button>
+                <Link to="/">Back</Link>
             </form>
         </div>
     )

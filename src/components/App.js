@@ -11,6 +11,7 @@ class App extends Component {
     super(props);
     this.state = {
       masterPostList: []
+
     };
     this.handlePostCreation = this.handlePostCreation.bind(this);
   }
@@ -21,6 +22,7 @@ class App extends Component {
     console.log(newMasterPostList);
     this.setState({ masterPostList: newMasterPostList });
   }
+
 
   render() {
     return (

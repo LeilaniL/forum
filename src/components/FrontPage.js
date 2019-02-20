@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Post from '../components/Post.js';
 import { Link } from 'react-router-dom';
+import Upvote from '../components/Upvote';
 
 function FrontPage(props) {
     return (
@@ -12,9 +13,10 @@ function FrontPage(props) {
                 <Post
                     title={post.title}
                     content={post.content}
-                    key={post.id} />
+                    key={post.id}
+                />
             )}
-            <Link to='/newpost'><button>Add New Post</button></Link>
+            <Link to="/newpost">Add New Post</Link>
         </div>
     )
 }
